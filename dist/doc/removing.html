@@ -140,9 +140,9 @@
 <h4>jsPlumb.remove</h4>
 
 <p>This removes an element from the DOM and all Connections and Endpoints associate with that element:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">conn</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span><span class="nx">source</span><span class="o">:</span><span class="s2">&quot;element1&quot;</span><span class="p">,</span> <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;element2&quot;</span><span class="p">});</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">conn</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span><span class="na">source</span><span class="p">:</span><span class="s2">"element1"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span><span class="s2">"element2"</span><span class="p">});</span>
 <span class="p">...</span>
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">"element1"</span><span class="p">);</span>
 </code></pre></div>
 <p><code>conn</code> is now detached and <code>element1</code> is gone from the DOM. </p>
 
@@ -151,12 +151,12 @@
 <h4>jsPlumb.empty</h4>
 
 <p>This removes all the child elements from some element, and all of the Connections and Endpoints associated with those child elements. Perhaps you have this markup:</p>
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;list&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;one&quot;</span><span class="nt">&gt;</span>One<span class="nt">&lt;/li&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"one"</span><span class="nt">&gt;</span>One<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ul&gt;</span>
-</code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">conn</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span><span class="nx">source</span><span class="o">:</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;someOtherElement&quot;</span><span class="p">});</span>
+</code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">conn</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span><span class="na">source</span><span class="p">:</span><span class="s2">"one"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span><span class="s2">"someOtherElement"</span><span class="p">});</span>
 <span class="p">...</span>
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">empty</span><span class="p">(</span><span class="s2">&quot;list&quot;</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">empty</span><span class="p">(</span><span class="s2">"list"</span><span class="p">);</span>
 </code></pre></div>
 <p><code>conn</code> is now detached and the UL is empty.</p>
 
@@ -173,7 +173,7 @@
 <h5>Detaching a single connection</h5>
 
 <p>To remove a single Connection, use <code>jsPlumb.detach</code>:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">var conn = jsPlumb.connect({ some params});
+<div class="highlight"><pre><code class="language-" data-lang="">var conn = jsPlumb.connect({ some params});
 ...
 jsPlumb.detach(conn);
 </code></pre></div>
@@ -195,7 +195,7 @@ jsPlumb.detach(conn);
 <h5>Detaching all Connections from a single element</h5>
 
 <p>To detach all the Connections from some given element:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">jsPlumb.detachAllConnections(el, [params])
+<div class="highlight"><pre><code class="language-" data-lang="">jsPlumb.detachAllConnections(el, [params])
 </code></pre></div>
 <p><strong>el</strong> may be:</p>
 
@@ -214,7 +214,7 @@ jsPlumb.detach(conn);
 <h4>Detaching all Connections from every element</h4>
 
 <p>To detach every Connection in jsPlumb:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">jsPlumb.detachEveryConnection();
+<div class="highlight"><pre><code class="language-" data-lang="">jsPlumb.detachEveryConnection();
 </code></pre></div>
 <p>This leaves all Endpoints in place according to the deletion rules outlined in the description of <code>jsPlumb.detach</code> above.</p>
 
@@ -225,7 +225,7 @@ jsPlumb.detach(conn);
 <h5>Deleting a single Endpoint</h5>
 
 <p>To delete a single Endpoint:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">var ep = jsPlumb.addEndpoint(someElement, { ... });
+<div class="highlight"><pre><code class="language-" data-lang="">var ep = jsPlumb.addEndpoint(someElement, { ... });
 ...
 jsPlumb.deleteEndpoint(ep);
 </code></pre></div>
@@ -239,7 +239,7 @@ jsPlumb.deleteEndpoint(ep);
 <h5>Deleting every Endpoint</h5>
 
 <p>To delete every Endpoint in jsPlumb:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">jsPlumb.deleteEveryEndpoint();
+<div class="highlight"><pre><code class="language-" data-lang="">jsPlumb.deleteEveryEndpoint();
 </code></pre></div>
 <p>This has the effect of removing every Endpoint and also every Connection. </p>
 

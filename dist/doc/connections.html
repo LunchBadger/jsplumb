@@ -163,7 +163,7 @@
 <h4>Programmatic Connections</h4>
 
 <p>The most simple connection you can make with jsPlumb looks like this:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span><span class="nx">source</span><span class="o">:</span><span class="s2">&quot;element1&quot;</span><span class="p">,</span> <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;element2&quot;</span><span class="p">});</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span><span class="na">source</span><span class="p">:</span><span class="s2">"element1"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span><span class="s2">"element2"</span><span class="p">});</span>
 </code></pre></div>
 <p>In this example we have created a Connection from &#39;element1&#39; to &#39;element2&#39;.  Remember that a Connection in jsPlumb consists of two Endpoints, a Connector, and zero or more Overlays.  But this call to &#39;connect&#39; supplied none of those things, so jsPlumb uses the default values wherever it needs to.  In this case, default values have been used for the following: </p>
 
@@ -178,11 +178,11 @@
 
 <p>Let&#39;s beef up this call a little and tell jsPlumb what sort of Endpoints we want, and where we want them:       </p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span>
-  <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;element1&quot;</span><span class="p">,</span> 
-  <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;element2&quot;</span><span class="p">,</span>
-  <span class="nx">anchors</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;Right&quot;</span><span class="p">,</span> <span class="s2">&quot;Left&quot;</span> <span class="p">],</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span>
-  <span class="nx">endpointStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">fillStyle</span><span class="o">:</span> <span class="s2">&quot;yellow&quot;</span> <span class="p">}</span>
+  <span class="na">source</span><span class="p">:</span><span class="s2">"element1"</span><span class="p">,</span> 
+  <span class="na">target</span><span class="p">:</span><span class="s2">"element2"</span><span class="p">,</span>
+  <span class="na">anchors</span><span class="p">:[</span><span class="s2">"Right"</span><span class="p">,</span> <span class="s2">"Left"</span> <span class="p">],</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span>
+  <span class="na">endpointStyle</span><span class="p">:{</span> <span class="na">fillStyle</span><span class="p">:</span> <span class="s2">"yellow"</span> <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>This is what we have told jsPlumb we want this time:</p>
@@ -199,13 +199,13 @@
 
 <p>A fairly common situation you will find yourself in is wanting to create a bunch of Connections that have only minor differences between them.  To support that, <code>jsPlumb.connect</code> takes an optional second argument. For example:           </p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">common</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">anchors</span><span class="o">:</span><span class="p">[</span> <span class="s2">&quot;BottomCenter&quot;</span><span class="p">,</span> <span class="s2">&quot;TopCenter&quot;</span> <span class="p">],</span>
-  <span class="nx">endpoints</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;Dot&quot;</span><span class="p">,</span> <span class="s2">&quot;Blank&quot;</span> <span class="p">]</span>
+  <span class="na">anchors</span><span class="p">:[</span> <span class="s2">"BottomCenter"</span><span class="p">,</span> <span class="s2">"TopCenter"</span> <span class="p">],</span>
+  <span class="na">endpoints</span><span class="p">:[</span><span class="s2">"Dot"</span><span class="p">,</span> <span class="s2">"Blank"</span> <span class="p">]</span>
 <span class="p">};</span>
 
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;someElement&quot;</span><span class="p">,</span> <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;someOtherElement&quot;</span> <span class="p">},</span> <span class="nx">common</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> <span class="na">source</span><span class="p">:</span><span class="s2">"someElement"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span><span class="s2">"someOtherElement"</span> <span class="p">},</span> <span class="nx">common</span><span class="p">);</span>
 
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;aThirdElement&quot;</span><span class="p">,</span> <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;yetAnotherElement&quot;</span> <span class="p">},</span> <span class="nx">common</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> <span class="na">source</span><span class="p">:</span><span class="s2">"aThirdElement"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span><span class="s2">"yetAnotherElement"</span> <span class="p">},</span> <span class="nx">common</span><span class="p">);</span>
 </code></pre></div>
 <h5>Endpoints created by jsPlumb.connect</h5>
 
@@ -213,9 +213,9 @@
 
 <p><strong>Note</strong>: given that <code>jsPlumb.connect</code> creates its own Endpoints in some circumstances, in order to avoid leaving orphaned Endpoints around the place, if the Connection is subsequently deleted, these automatically created Endpoints are deleted too.  Should you want to, you can override this behaviour by setting <code>deleteEndpointsOnDetach</code> to false in the connect call:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> 
-  <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;aThirdElement&quot;</span><span class="p">,</span> 
-  <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;yetAnotherElement&quot;</span><span class="p">,</span>
-  <span class="nx">deleteEndpointsOnDetach</span><span class="o">:</span><span class="kc">false</span> 
+  <span class="na">source</span><span class="p">:</span><span class="s2">"aThirdElement"</span><span class="p">,</span> 
+  <span class="na">target</span><span class="p">:</span><span class="s2">"yetAnotherElement"</span><span class="p">,</span>
+  <span class="na">deleteEndpointsOnDetach</span><span class="p">:</span><span class="kc">false</span> 
 <span class="p">});</span>
 </code></pre></div>
 <p><a name="detaching"></a></p>
@@ -225,15 +225,15 @@
 <p>By default, connections made with <code>jsPlumb.connect</code> will be detachable via the mouse.  You can prevent this by either setting an appropriate default value:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">importDefaults</span><span class="p">({</span> 
   <span class="p">...</span>
-  <span class="nx">ConnectionsDetachable</span><span class="o">:</span><span class="kc">false</span>
+  <span class="na">ConnectionsDetachable</span><span class="p">:</span><span class="kc">false</span>
   <span class="p">...</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>...or by specifying it on the connect call like this:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> 
-  <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;aThirdElement&quot;</span><span class="p">,</span> 
-  <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;yetAnotherElement&quot;</span><span class="p">,</span>
-  <span class="nx">detachable</span><span class="o">:</span><span class="kc">false</span>
+  <span class="na">source</span><span class="p">:</span><span class="s2">"aThirdElement"</span><span class="p">,</span> 
+  <span class="na">target</span><span class="p">:</span><span class="s2">"yetAnotherElement"</span><span class="p">,</span>
+  <span class="na">detachable</span><span class="p">:</span><span class="kc">false</span>
 <span class="p">});</span>
 </code></pre></div>
 <p><a name="draganddrop"></a></p>
@@ -241,8 +241,8 @@
 <h4>Drag and Drop Connections</h4>
 
 <p>To support drag and drop connections, you first need to set a few things up.  Every drag and drop connection needs at least a source Endpoint that the user can drag a connection from. Here&#39;s a simple example of how to create an Endpoint:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">endpointOptions</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">isSource</span><span class="o">:</span><span class="kc">true</span> <span class="p">};</span>
-<span class="kd">var</span> <span class="nx">endpoint</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s1">&#39;elementId&#39;</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">endpointOptions</span> <span class="o">=</span> <span class="p">{</span> <span class="na">isSource</span><span class="p">:</span><span class="kc">true</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">endpoint</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s1">'elementId'</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
 </code></pre></div>
 <p>This Endpoint will act as a source for new Connections, and will use the jsPlumb defaults for its own appearance and that of any Connections that are drawn from it.                            </p>
 
@@ -250,25 +250,25 @@
 
 <p>One thing that happens quite often is that you have an Endpoint whose appearance and behaviour is largely the same between usages on different elements, with just a few differences. </p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">exampleGreyEndpointOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span>
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">25</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">21</span><span class="p">,</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s1">&#39;#666&#39;</span> <span class="p">},</span>
-  <span class="nx">isSource</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">connectorStyle</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">strokeStyle</span><span class="o">:</span><span class="s2">&quot;#666&quot;</span> <span class="p">},</span>
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span>
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">width</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s1">'#666'</span> <span class="p">},</span>
+  <span class="na">isSource</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">connectorStyle</span> <span class="p">:</span> <span class="p">{</span> <span class="na">strokeStyle</span><span class="p">:</span><span class="s2">"#666"</span> <span class="p">},</span>
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span>
 <span class="p">};</span>
 </code></pre></div>
 <p>Notice there is no <code>anchor</code> set.  Here we apply it to two elements, at a different location in each:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">&quot;element1&quot;</span><span class="p">,</span> <span class="p">{</span> 
-  <span class="nx">anchor</span><span class="o">:</span><span class="s2">&quot;Bottom&quot;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">"element1"</span><span class="p">,</span> <span class="p">{</span> 
+  <span class="na">anchor</span><span class="p">:</span><span class="s2">"Bottom"</span>
 <span class="p">},</span> <span class="nx">exampleGreyEndpointOptions</span><span class="p">));</span> 
 
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">&quot;element2&quot;</span><span class="p">,</span> <span class="p">{</span> 
-  <span class="nx">anchor</span><span class="o">:</span><span class="s2">&quot;Top&quot;</span> 
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">"element2"</span><span class="p">,</span> <span class="p">{</span> 
+  <span class="na">anchor</span><span class="p">:</span><span class="s2">"Top"</span> 
 <span class="p">},</span> <span class="nx">exampleGreyEndpointOptions</span><span class="p">));</span>
 </code></pre></div>
 <p>Now that you have a source Endpoint, you need to either create a target Endpoint on some element, or notify jsPlumb that you wish to make an entire element a drop target.  Let&#39;s look at how to attach a target Endpoint first:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">endpointOptions</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s2">&quot;gray&quot;</span> <span class="p">}</span> <span class="p">};</span>
-<span class="kd">var</span> <span class="nx">endpoint</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">&quot;otherElementId&quot;</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">endpointOptions</span> <span class="o">=</span> <span class="p">{</span> <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span> <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s2">"gray"</span> <span class="p">}</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">endpoint</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">"otherElementId"</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
 </code></pre></div>
 <p>This Endpoint, a gray rectangle, has declared that it can act as a drop target for Connections. </p>
 
@@ -280,7 +280,7 @@
 
 <p>These methods honour the jsPlumb defaults - if, for example you set up the default Anchors to be this:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">importDefaults</span><span class="p">({</span>
-  <span class="nx">Anchors</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;Left&quot;</span><span class="p">,</span> <span class="s2">&quot;BottomRight&quot;</span> <span class="p">]</span>
+  <span class="na">Anchors</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">"Left"</span><span class="p">,</span> <span class="s2">"BottomRight"</span> <span class="p">]</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>... and then used <code>makeSource</code> and <code>makeTarget</code> without specifying Anchor locations, jsPlumb would use <code>Left</code> for the <code>makeSource</code> element and <code>BottomRight</code> for the <code>makeTarget</code> element.</p>
@@ -288,24 +288,24 @@
 <p>A further thing to note about <code>makeSource</code> and <code>makeTarget</code> is that any prior calls to one of these methods is honoured by subsequent calls to <code>jsPlumb.connect</code>. This helps when you&#39;re building a UI that uses this functionality at runtime but which loads some initial data, and you want the statically loaded data to have the same appearance and behaviour as dynamically created Connections (obviously quite a common use case).  </p>
 
 <p>For example:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">&quot;el1&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">anchor</span><span class="o">:</span><span class="s2">&quot;Continuous&quot;</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">20</span> <span class="p">}],</span>
-  <span class="nx">maxConnections</span><span class="o">:</span><span class="mi">3</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">"el1"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">anchor</span><span class="p">:</span><span class="s2">"Continuous"</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:[</span><span class="s2">"Rectangle"</span><span class="p">,</span> <span class="p">{</span> <span class="na">width</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">20</span> <span class="p">}],</span>
+  <span class="na">maxConnections</span><span class="p">:</span><span class="mi">3</span>
 <span class="p">});</span>    
 
 <span class="p">...</span>
 
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span><span class="nx">source</span><span class="o">:</span><span class="s2">&quot;el1&quot;</span><span class="p">,</span> <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;el2&quot;</span><span class="p">});</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span><span class="na">source</span><span class="p">:</span><span class="s2">"el1"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span><span class="s2">"el2"</span><span class="p">});</span>
 </code></pre></div>
 <p>In this example, the source of the connection will be a Rectangle of size 40x20, having a Continuous Anchor.  The source is also configured to allow a maximum of three Connections.</p>
 
 <p>You can override this behaviour by setting a <code>newConnection</code> parameter on the connect call:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">&quot;el1&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">anchor</span><span class="o">:</span><span class="s2">&quot;Continuous&quot;</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">20</span> <span class="p">}],</span>
-  <span class="nx">maxConnections</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-  <span class="nx">onMaxConnections</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">originalEvent</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">"el1"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">anchor</span><span class="p">:</span><span class="s2">"Continuous"</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:[</span><span class="s2">"Rectangle"</span><span class="p">,</span> <span class="p">{</span> <span class="na">width</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">20</span> <span class="p">}],</span>
+  <span class="na">maxConnections</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+  <span class="na">onMaxConnections</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">originalEvent</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// params contains:</span>
       <span class="c1">// {</span>
       <span class="c1">//    endpoint:..</span>
@@ -319,9 +319,9 @@
 <span class="p">...</span>
 
 <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> 
-  <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;el1&quot;</span><span class="p">,</span> 
-  <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;el2&quot;</span><span class="p">,</span> 
-  <span class="nx">newConnection</span><span class="o">:</span><span class="kc">true</span> 
+  <span class="na">source</span><span class="p">:</span><span class="s2">"el1"</span><span class="p">,</span> 
+  <span class="na">target</span><span class="p">:</span><span class="s2">"el2"</span><span class="p">,</span> 
+  <span class="na">newConnection</span><span class="p">:</span><span class="kc">true</span> 
 <span class="p">});</span>
 </code></pre></div>
 <p>Note the <code>onMaxConnections</code> parameter to this call - it allows you to supply a function to call if the user tries to 
@@ -331,14 +331,14 @@ drag a new Connection when the source has already reached capacity.</p>
 
 <p>As with <code>jsPlumb.connect</code>, <code>makeSource</code> can take an optional third argument consisting of parameters that may be common across several different calls:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">common</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">anchor</span><span class="o">:</span><span class="s2">&quot;Continuous&quot;</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">20</span> <span class="p">}],</span>
+  <span class="na">anchor</span><span class="p">:</span><span class="s2">"Continuous"</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:[</span><span class="s2">"Rectangle"</span><span class="p">,</span> <span class="p">{</span> <span class="na">width</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">20</span> <span class="p">}],</span>
 <span class="p">};</span>
 
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">&quot;el1&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">maxConnections</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-  <span class="nx">onMaxConnections</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">originalEvent</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;element is &quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span> <span class="s2">&quot;maxConnections is&quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">maxConnections</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">"el1"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">maxConnections</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+  <span class="na">onMaxConnections</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">originalEvent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"element is "</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span> <span class="s2">"maxConnections is"</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">maxConnections</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">},</span> <span class="nx">common</span><span class="p">);</span>
 </code></pre></div>
@@ -351,12 +351,12 @@ the Endpoint you wish to create on that element whenever a Connection is establi
 the exact same target Endpoint we used before - the gray rectangle - but we will tell jsPlumb that the element 
 <code>aTargetDiv</code> will be the drop target:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">endpointOptions</span> <span class="o">=</span> <span class="p">{</span> 
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> 
-  <span class="nx">maxConnections</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> 
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s2">&quot;gray&quot;</span> <span class="p">}</span> 
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> 
+  <span class="na">maxConnections</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span> 
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s2">"gray"</span> <span class="p">}</span> 
 <span class="p">};</span>
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;aTargetDiv&quot;</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"aTargetDiv"</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
 </code></pre></div>
 <p>The allowed values in &#39;endpointOptions&#39; are identical for both the <code>jsPlumb.addEndpoint</code> and <code>jsPlumb.makeTarget</code> methods, 
 but <code>makeTarget</code> supports an extended Anchor syntax that allows you more control over the location of the target endpoint.<br>
@@ -374,14 +374,14 @@ to false).</p>
 <p><code>makeTarget</code> also supports the <code>maxConnections</code> and <code>onMaxConnections</code> parameters, as <code>makeSource</code> does, but note that 
 <code>onMaxConnections</code> is passed one extra parameter than its corresponding callback from <code>makeSource</code> - the Connection 
 the user tried to drop:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;aTargetDiv&quot;</span><span class="p">,</span> <span class="p">{</span> 
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> 
-  <span class="nx">maxConnections</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> 
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s2">&quot;gray&quot;</span> <span class="p">},</span>
-  <span class="nx">maxConnections</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span>
-  <span class="nx">onMaxConnections</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">originalEvent</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;user tried to drop connection&quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">connection</span><span class="p">,</span> <span class="s2">&quot;on element&quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span> <span class="s2">&quot;with max connections&quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">maxConnections</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"aTargetDiv"</span><span class="p">,</span> <span class="p">{</span> 
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> 
+  <span class="na">maxConnections</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span> 
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s2">"gray"</span> <span class="p">},</span>
+  <span class="na">maxConnections</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+  <span class="na">onMaxConnections</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">originalEvent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"user tried to drop connection"</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">connection</span><span class="p">,</span> <span class="s2">"on element"</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span> <span class="s2">"with max connections"</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">maxConnections</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
@@ -390,14 +390,14 @@ the user tried to drop:</p>
 <p>As with <code>jsPlumb.connect</code> and <code>jsPlumb.makeSource</code>, <code>jsPlumb.makeTarget</code> can take an optional third argument consisting 
 of parameters that may be common across several different calls:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">common</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">anchor</span><span class="o">:</span><span class="s2">&quot;Continuous&quot;</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">20</span> <span class="p">}],</span>
+  <span class="na">anchor</span><span class="p">:</span><span class="s2">"Continuous"</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:[</span><span class="s2">"Rectangle"</span><span class="p">,</span> <span class="p">{</span> <span class="na">width</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">20</span> <span class="p">}],</span>
 <span class="p">};</span>
 
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;el1&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">maxConnections</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-  <span class="nx">onMaxConnections</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">originalEvent</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;element is &quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span> <span class="s2">&quot;maxConnections is&quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">maxConnections</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"el1"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">maxConnections</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+  <span class="na">onMaxConnections</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">originalEvent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"element is "</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">.</span><span class="nx">element</span><span class="p">,</span> <span class="s2">"maxConnections is"</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">maxConnections</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">},</span> <span class="nx">common</span><span class="p">);</span>
 </code></pre></div>
@@ -406,8 +406,8 @@ of parameters that may be common across several different calls:</p>
 <h5>Preventing Loopback Connections</h5>
 
 <p>In vanilla jsPlumb only, you can instruct jsPlumb to prevent loopback connections without having to resort to a <a href="interceptors">beforeDrop interceptor</a>. You do this by setting <code>allowLoopback:false</code> on the parameters passed to the <code>makeTarget</code> method:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">allowLoopback</span><span class="o">:</span><span class="kc">false</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">allowLoopback</span><span class="p">:</span><span class="kc">false</span>
 <span class="p">});</span>
 </code></pre></div>
 <p><a id="uniqueEndpoint"></a></p>
@@ -416,12 +416,12 @@ of parameters that may be common across several different calls:</p>
 
 <p>jsPlumb will create a new Endpoint using the supplied information every time a new Connection is established on the target element, by default, but you can override this behaviour and tell jsPlumb that it should create at most one Endpoint, which it should attempt to use for subsequent Connections:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">endpointOptions</span> <span class="o">=</span> <span class="p">{</span> 
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> 
-  <span class="nx">uniqueEndpoint</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> 
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s2">&quot;gray&quot;</span> <span class="p">}</span> 
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> 
+  <span class="na">uniqueEndpoint</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span> 
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s2">"gray"</span> <span class="p">}</span> 
 <span class="p">};</span>
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;aTargetDiv&quot;</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"aTargetDiv"</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
 </code></pre></div>
 <p>Here, the <code>uniqueEndpoint</code> parameter tells jsPlumb that there should be at most one Endpoint on this element.  Notice that <code>maxConnections</code> is not set: the default is 1, so in this setup we have told jsPlumb that <code>aTargetDiv</code> can receive one Connection and no more.</p>
 
@@ -431,14 +431,14 @@ of parameters that may be common across several different calls:</p>
 
 <p>By default, any Endpoints created using makeTarget have <code>deleteEndpointsOnDetach</code> set to true, which means that once all Connections to that Endpoint are removed, the Endpoint is deleted.  You can override this by setting the flag to true on the <code>makeTarget</code> call:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">endpointOptions</span> <span class="o">=</span> <span class="p">{</span> 
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span> 
-  <span class="nx">maxConnections</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span>
-  <span class="nx">uniqueEndpoint</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">deleteEndpointsOnDetach</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span> 
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s2">&quot;gray&quot;</span> <span class="p">}</span> 
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> 
+  <span class="na">maxConnections</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+  <span class="na">uniqueEndpoint</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">deleteEndpointsOnDetach</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span> 
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s2">"gray"</span> <span class="p">}</span> 
 <span class="p">};</span>
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;aTargetDiv&quot;</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"aTargetDiv"</span><span class="p">,</span> <span class="nx">endpointOptions</span><span class="p">);</span>
 </code></pre></div>
 <p>In this setup we have told jsPlumb to create an Endpoint the first time <code>aTargetElement</code> receives a Connection, and to not delete it even if there are no longer any Connections to it.  The created Endpoint will be reused for subsequent Connections, and can support a maximum of 5.</p>
 
@@ -449,24 +449,24 @@ of parameters that may be common across several different calls:</p>
 <p>As with <code>jsPlumb.connect</code>, Connections made with the mouse after setting up Endpoints with one of the functions we&#39;ve just covered will be, by default, detachable.  You can prevent this in the jsPlumb defaults, as previously mentioned:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">importDefaults</span><span class="p">({</span> 
   <span class="p">...</span>
-  <span class="nx">ConnectionsDetachable</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+  <span class="na">ConnectionsDetachable</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
   <span class="p">...</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>And you can also set this on a per-endpoint (or source/target) level, like in these examples:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">&quot;someElementId&quot;</span><span class="p">,</span> <span class="p">{</span> 
-  <span class="nx">connectionsDetachable</span><span class="o">:</span><span class="kc">false</span>   
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">"someElementId"</span><span class="p">,</span> <span class="p">{</span> 
+  <span class="na">connectionsDetachable</span><span class="p">:</span><span class="kc">false</span>   
 <span class="p">});</span>
 
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">&quot;someOtherElement&quot;</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">"someOtherElement"</span><span class="p">,</span> <span class="p">{</span>
   <span class="p">...</span>
-  <span class="nx">connectionsDetachable</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+  <span class="na">connectionsDetachable</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
   <span class="p">...</span>
 <span class="p">});</span>
 
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;yetAnotherElement&quot;</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"yetAnotherElement"</span><span class="p">,</span> <span class="p">{</span>
   <span class="p">...</span>
-  <span class="nx">connectionsDetachable</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+  <span class="na">connectionsDetachable</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
   <span class="p">...</span>
 <span class="p">});</span>
 </code></pre></div>
@@ -485,17 +485,17 @@ the appropriate location of a target Anchor for every new Connection dropped on 
 <li>Instruct jsPlumb to place the target anchor at the exact location at which the mouse button was released on the target element. Note that you tell jsPlumb the anchor is of type &quot;Assign&quot;, and you then provide a &quot;position&quot;
 parameter, which can be the name of some position finder, or a position finder function itself:</li>
 </ul>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;someElement&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">anchor</span><span class="o">:</span><span class="p">[</span> <span class="s2">&quot;Assign&quot;</span><span class="p">,</span> <span class="p">{</span> 
-    <span class="nx">position</span><span class="o">:</span><span class="s2">&quot;Fixed&quot;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"someElement"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">anchor</span><span class="p">:[</span> <span class="s2">"Assign"</span><span class="p">,</span> <span class="p">{</span> 
+    <span class="na">position</span><span class="p">:</span><span class="s2">"Fixed"</span>
   <span class="p">}]</span>
 <span class="p">});</span>
 </code></pre></div>
 <p><code>Fixed</code> is one of the two default position finders provided by jsPlumb. The other is <code>Grid</code>:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;someElement&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">anchor</span><span class="o">:</span><span class="p">[</span> <span class="s2">&quot;Assign&quot;</span><span class="p">,</span> <span class="p">{</span> 
-    <span class="nx">position</span><span class="o">:</span><span class="s2">&quot;Grid&quot;</span><span class="p">,</span>
-    <span class="nx">grid</span><span class="o">:</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"someElement"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">anchor</span><span class="p">:[</span> <span class="s2">"Assign"</span><span class="p">,</span> <span class="p">{</span> 
+    <span class="na">position</span><span class="p">:</span><span class="s2">"Grid"</span><span class="p">,</span>
+    <span class="na">grid</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
   <span class="p">}]</span>
 <span class="p">});</span>
 </code></pre></div>
@@ -524,16 +524,16 @@ parameter, which can be the name of some position finder, or a position finder f
 <p>To make your own position finder you need to create a function that takes those four arguments and returns an [x, y] position for the anchor, for example:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">AnchorPositionFinders</span><span class="p">.</span><span class="nx">MyFinder</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dp</span><span class="p">,</span> <span class="nx">ep</span><span class="p">,</span> <span class="nx">es</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">...</span> <span class="k">do</span> <span class="nx">some</span> <span class="nx">maths</span> <span class="p">...</span> 
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;my custom parameter is &quot;</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">myCustomParameter</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"my custom parameter is "</span><span class="p">,</span> <span class="nx">params</span><span class="p">.</span><span class="nx">myCustomParameter</span><span class="p">);</span>
   <span class="k">return</span> <span class="p">[</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="p">];</span>  
 <span class="p">};</span>
 </code></pre></div>
 <p>Then refer to it in a makeTarget call:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">&quot;someElement&quot;</span><span class="p">,</span> <span class="p">{</span>  
-  <span class="nx">anchor</span><span class="o">:</span><span class="p">[</span> <span class="s2">&quot;Assign&quot;</span><span class="p">,</span> <span class="p">{</span> 
-    <span class="nx">position</span><span class="o">:</span><span class="s2">&quot;MyFinder&quot;</span><span class="p">,</span>
-    <span class="nx">myCustomParameter</span><span class="o">:</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span>
-    <span class="nx">anInteger</span><span class="o">:</span><span class="mi">5</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeTarget</span><span class="p">(</span><span class="s2">"someElement"</span><span class="p">,</span> <span class="p">{</span>  
+  <span class="na">anchor</span><span class="p">:[</span> <span class="s2">"Assign"</span><span class="p">,</span> <span class="p">{</span> 
+    <span class="na">position</span><span class="p">:</span><span class="s2">"MyFinder"</span><span class="p">,</span>
+    <span class="na">myCustomParameter</span><span class="p">:</span><span class="s2">"foo"</span><span class="p">,</span>
+    <span class="na">anInteger</span><span class="p">:</span><span class="mi">5</span>
   <span class="p">}]</span>
 <span class="p">});</span>
 </code></pre></div>
@@ -545,9 +545,9 @@ parameter, which can be the name of some position finder, or a position finder f
 
 <p>Here&#39;s an example code snippet for the basic use case of makeSource:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="nx">someDiv</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s2">&quot;yellow&quot;</span> <span class="p">},</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Blank&quot;</span><span class="p">,</span>
-  <span class="nx">anchor</span><span class="o">:</span><span class="s2">&quot;BottomCenter&quot;</span>
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s2">"yellow"</span> <span class="p">},</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Blank"</span><span class="p">,</span>
+  <span class="na">anchor</span><span class="p">:</span><span class="s2">"BottomCenter"</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>Notice again that the second argument is the same as the second argument to an <code>addEndpoint</code> call.  <code>makeSource</code> is, essentially, a type of <code>addEndpoint</code> call.  In this example we have told jsPlumb that we will support dragging Connections directly from <code>someDiv</code>.  Whenever a Connection is established between <code>someDiv</code> and some other element, jsPlumb assigns an Endpoint at BottomCenter of <code>someDiv</code>, fills it yellow, and sets that Endpoint as the newly created Connection&#39;s source. </p>
@@ -561,7 +561,7 @@ parameter, which can be the name of some position finder, or a position finder f
 <h5>Supplying a <code>filter</code> parameter</h5>
 
 <p>You can supply a <code>filter</code> parameter to the makeSource call, which can be either a function or a selector. Consider this markup:</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;foo&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;span&gt;</span>FOO<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;button&gt;</span>click me<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;div&gt;</span>
@@ -571,8 +571,8 @@ parameter, which can be the name of some position finder, or a position finder f
 <h6>Selector Filter</h6>
 
 <p>We can supply a selector filter to the <code>makeSource</code> call to do so:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">filter</span><span class="o">:</span><span class="s2">&quot;:not(button)&quot;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">filter</span><span class="p">:</span><span class="s2">":not(button)"</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>Valid values for a filter selector are <a href="http://www.w3.org/TR/css3-selectors/">as per the spec</a>. </p>
@@ -582,17 +582,17 @@ parameter, which can be the name of some position finder, or a position finder f
 <p>One of the limitations of CSS3 selectors is that the contents of a <code>:not</code> selector are restricted to what are called <strong>simple selectors</strong>. What this means is that only one item may appear inside a <code>:not</code>, eg. <code>:not(.someClass)</code>, <code>:not(button)</code> etc. You cannot, however, do something like this: <code>:not(.myClass button)</code>.  </p>
 
 <p>To allow for these sorts of negation selectors, you can set the <code>filterExclude:true</code> flag and re-write your selector:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">filter</span><span class="o">:</span><span class="s2">&quot;span&quot;</span><span class="p">,</span>
-  <span class="nx">filterExclude</span><span class="o">:</span><span class="kc">true</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">filter</span><span class="p">:</span><span class="s2">"span"</span><span class="p">,</span>
+  <span class="na">filterExclude</span><span class="p">:</span><span class="kc">true</span>
 <span class="p">});</span>
 </code></pre></div>
 <h6>Filter Function</h6>
 
 <p>Alternatively, you can supply a function as the filter:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">filter</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span> <span class="o">!==</span> <span class="s2">&quot;BUTTON&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">makeSource</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">filter</span><span class="p">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">tagName</span> <span class="o">!==</span> <span class="s2">"BUTTON"</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div>
@@ -606,23 +606,23 @@ parameter, which can be the name of some position finder, or a position finder f
 
 <p>Here&#39;s an example of specifying that you want an Arrow overlay halfway along any Connection dragged from this Endpoint:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">exampleGreyEndpointOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span>
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">25</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">21</span><span class="p">,</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s1">&#39;#666&#39;</span> <span class="p">},</span>
-  <span class="nx">isSource</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">connectorStyle</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">strokeStyle</span><span class="o">:</span><span class="s2">&quot;#666&quot;</span> <span class="p">},</span>
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">connectorOverlays</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span> <span class="s2">&quot;Arrow&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">location</span><span class="o">:</span><span class="mf">0.5</span> <span class="p">}</span> <span class="p">]</span> <span class="p">]</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span>
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">width</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s1">'#666'</span> <span class="p">},</span>
+  <span class="na">isSource</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">connectorStyle</span> <span class="p">:</span> <span class="p">{</span> <span class="na">strokeStyle</span><span class="p">:</span><span class="s2">"#666"</span> <span class="p">},</span>
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">connectorOverlays</span><span class="p">:</span> <span class="p">[</span> <span class="p">[</span> <span class="s2">"Arrow"</span><span class="p">,</span> <span class="p">{</span> <span class="na">location</span><span class="p">:</span><span class="mf">0.5</span> <span class="p">}</span> <span class="p">]</span> <span class="p">]</span>
 <span class="p">};</span>
 </code></pre></div>
 <p>This is an Endpoint that moves around the element it is attached to dependent on the location of other elements in the connections it is attached to (a &#39;dynamic&#39; anchor):</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">exampleGreyEndpointOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span>
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">25</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">21</span><span class="p">,</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s1">&#39;#666&#39;</span> <span class="p">},</span>
-  <span class="nx">isSource</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">connectorStyle</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">strokeStyle</span><span class="o">:</span><span class="s2">&quot;#666&quot;</span> <span class="p">},</span>
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">connectorOverlays</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span> <span class="s2">&quot;Arrow&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">location</span><span class="o">:</span><span class="mf">0.5</span> <span class="p">}</span> <span class="p">]</span> <span class="p">]</span>
-  <span class="nx">anchor</span><span class="o">:</span><span class="p">[</span> <span class="s2">&quot;TopCenter&quot;</span><span class="p">,</span><span class="s2">&quot;RightMiddle&quot;</span><span class="p">,</span><span class="s2">&quot;BottomCenter&quot;</span><span class="p">,</span><span class="s2">&quot;LeftMiddle&quot;</span> <span class="p">]</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span>
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">width</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s1">'#666'</span> <span class="p">},</span>
+  <span class="na">isSource</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">connectorStyle</span> <span class="p">:</span> <span class="p">{</span> <span class="na">strokeStyle</span><span class="p">:</span><span class="s2">"#666"</span> <span class="p">},</span>
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">connectorOverlays</span><span class="p">:</span> <span class="p">[</span> <span class="p">[</span> <span class="s2">"Arrow"</span><span class="p">,</span> <span class="p">{</span> <span class="na">location</span><span class="p">:</span><span class="mf">0.5</span> <span class="p">}</span> <span class="p">]</span> <span class="p">]</span>
+  <span class="na">anchor</span><span class="p">:[</span> <span class="s2">"TopCenter"</span><span class="p">,</span><span class="s2">"RightMiddle"</span><span class="p">,</span><span class="s2">"BottomCenter"</span><span class="p">,</span><span class="s2">"LeftMiddle"</span> <span class="p">]</span>
 <span class="p">};</span>
 </code></pre></div>
 <h5>Testing if an element is a target or source</h5>
@@ -672,7 +672,7 @@ parameter, which can be the name of some position finder, or a position finder f
 <p>These last two are analogous to the <code>removeEveryConnection</code> and <code>deleteEveryEndpoint</code> methods that have been in jsPlumb for a while now.</p>
 
 <p><code>unmakeTarget</code> and <code>unmakeSource</code> both take as argument the same sorts of values that <code>makeTarget</code> and <code>makeSource</code> accept - a string id, or a selector, or an array of either of these:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">unmakeTarget</span><span class="p">(</span><span class="s2">&quot;aDivId&quot;</span><span class="p">).</span><span class="nx">unmakeSource</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.aSelector&quot;</span><span class="p">));</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">unmakeTarget</span><span class="p">(</span><span class="s2">"aDivId"</span><span class="p">).</span><span class="nx">unmakeSource</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">".aSelector"</span><span class="p">));</span>
 </code></pre></div>
 <p><a name="dragOptions"></a></p>
 
@@ -714,12 +714,12 @@ parameter, which can be the name of some position finder, or a position finder f
 
 <p>jsPlumb borrowed the concept of &#39;scope&#39; from jQuery&#39;s drag/drop implementation: the notion of which draggables can be dropped on which droppables.  In jsPlumb you can provide a &#39;scope&#39; entry when creating an Endpoint.  Here&#39;s the example grey Endpoint example with &#39;scope&#39; added:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">exampleGreyEndpointOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span>
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">25</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">21</span><span class="p">,</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s2">&quot;#666&quot;</span> <span class="p">},</span>
-  <span class="nx">isSource</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">connectionStyle</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">strokeStyle</span><span class="o">:</span><span class="s2">&quot;#666&quot;</span> <span class="p">},</span>
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">scope</span><span class="o">:</span><span class="s2">&quot;exampleGreyConnection&quot;</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span>
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">width</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s2">"#666"</span> <span class="p">},</span>
+  <span class="na">isSource</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">connectionStyle</span> <span class="p">:</span> <span class="p">{</span> <span class="na">strokeStyle</span><span class="p">:</span><span class="s2">"#666"</span> <span class="p">},</span>
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">scope</span><span class="p">:</span><span class="s2">"exampleGreyConnection"</span>
 <span class="p">};</span>
 </code></pre></div>
 <p>If you do not provide a &#39;scope&#39; entry, jsPlumb uses a default scope.  Its value is accessible through this method:</p>
@@ -732,13 +732,13 @@ parameter, which can be the name of some position finder, or a position finder f
 
 <p>You can also, should you want to, provide the scope value separately on the drag/drop options, like this:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">exampleGreyEndpointOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span>
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">25</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">21</span><span class="p">,</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s1">&#39;#666&#39;</span> <span class="p">},</span>
-  <span class="nx">isSource</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">connectionStyle</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">strokeStyle</span><span class="o">:</span><span class="s2">&quot;#666&quot;</span> <span class="p">},</span>
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">dragOptions</span><span class="o">:</span><span class="p">{</span> <span class="nx">scope</span><span class="o">:</span><span class="s2">&quot;dragScope&quot;</span> <span class="p">},</span>
-  <span class="nx">dropOptions</span><span class="o">:</span><span class="p">{</span> <span class="nx">scope</span><span class="o">:</span><span class="s2">&quot;dropScope&quot;</span> <span class="p">}</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span>
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">width</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s1">'#666'</span> <span class="p">},</span>
+  <span class="na">isSource</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">connectionStyle</span> <span class="p">:</span> <span class="p">{</span> <span class="na">strokeStyle</span><span class="p">:</span><span class="s2">"#666"</span> <span class="p">},</span>
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">dragOptions</span><span class="p">:{</span> <span class="na">scope</span><span class="p">:</span><span class="s2">"dragScope"</span> <span class="p">},</span>
+  <span class="na">dropOptions</span><span class="p">:{</span> <span class="na">scope</span><span class="p">:</span><span class="s2">"dropScope"</span> <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
 <p><a name="multipleScopes"></a></p>
@@ -747,12 +747,12 @@ parameter, which can be the name of some position finder, or a position finder f
 
 <p>If you&#39;re using vanilla jsPlumb you can assign multiple scopes to some Endpoint, or element configured via <code>makeSource</code> or <code>makeTarget</code>. To do so, provide the scopes as a space-separated list, as you would with CSS classes:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">exampleGreyEndpointOptions</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Rectangle&quot;</span><span class="p">,</span>
-  <span class="nx">paintStyle</span><span class="o">:</span><span class="p">{</span> <span class="nx">width</span><span class="o">:</span><span class="mi">25</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span><span class="mi">21</span><span class="p">,</span> <span class="nx">fillStyle</span><span class="o">:</span><span class="s2">&quot;#666&quot;</span> <span class="p">},</span>
-  <span class="nx">isSource</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">connectionStyle</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">strokeStyle</span><span class="o">:</span><span class="s2">&quot;#666&quot;</span> <span class="p">},</span>
-  <span class="nx">isTarget</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">scope</span><span class="o">:</span><span class="s2">&quot;foo bar baz&quot;</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Rectangle"</span><span class="p">,</span>
+  <span class="na">paintStyle</span><span class="p">:{</span> <span class="na">width</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span> <span class="na">fillStyle</span><span class="p">:</span><span class="s2">"#666"</span> <span class="p">},</span>
+  <span class="na">isSource</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">connectionStyle</span> <span class="p">:</span> <span class="p">{</span> <span class="na">strokeStyle</span><span class="p">:</span><span class="s2">"#666"</span> <span class="p">},</span>
+  <span class="na">isTarget</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">scope</span><span class="p">:</span><span class="s2">"foo bar baz"</span>
 <span class="p">};</span>
 </code></pre></div>
 <p><a name="setScope"></a></p>
@@ -795,8 +795,8 @@ parameter, which can be the name of some position finder, or a position finder f
 
 <p>This behaviour can also be controlled using jsPlumb defaults:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">importDefaults</span><span class="p">({</span>
-  <span class="nx">ConnectionsDetachable</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-  <span class="nx">ReattachConnections</span><span class="o">:</span><span class="kc">true</span>
+  <span class="na">ConnectionsDetachable</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="na">ReattachConnections</span><span class="p">:</span><span class="kc">true</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>The default value of ConnectionsDetachable is <strong>true</strong>, and the default value of ReattachConnections is <strong>false</strong>, so in actual fact those defaults are kind of pointless. But you probably get the idea.</p>

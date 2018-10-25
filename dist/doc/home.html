@@ -184,14 +184,14 @@ that support SVG. </p>
 <h3>Required Imports</h3>
 
 <p>No required imports. </p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;PATH_TO/jsPlumb-x.x.x-min.js &quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"PATH_TO/jsPlumb-x.x.x-min.js "</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre></div>
 <p><a name="initializing"></a></p>
 
 <h3>Initializing jsPlumb</h3>
 
 <p>You should not start making calls to jsPlumb until the DOM has been initialized - perhaps no surprises there.  To handle this, you should bind to the <code>ready</code> event on jsPlumb (or the instance of jsPlumb you are working with):           </p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s2">&quot;ready&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s2">"ready"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="p">...</span>           
   <span class="c1">// your jsPlumb related init code goes here</span>
   <span class="p">...</span>  
@@ -215,34 +215,34 @@ that support SVG. </p>
 </code></pre></div>
 <p>The variable <code>firstInstance</code> can now be treated exactly as you would treat the <code>jsPlumb</code> variable - you can set defaults, call the <code>connect</code> method, whatever:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">firstInstance</span><span class="p">.</span><span class="nx">importDefaults</span><span class="p">({</span>
-  <span class="nx">Connector</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;Bezier&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">curviness</span><span class="o">:</span> <span class="mi">150</span> <span class="p">}</span> <span class="p">],</span>
-  <span class="nx">Anchors</span> <span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;TopCenter&quot;</span><span class="p">,</span> <span class="s2">&quot;BottomCenter&quot;</span> <span class="p">]</span>
+  <span class="na">Connector</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">"Bezier"</span><span class="p">,</span> <span class="p">{</span> <span class="na">curviness</span><span class="p">:</span> <span class="mi">150</span> <span class="p">}</span> <span class="p">],</span>
+  <span class="na">Anchors</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">"TopCenter"</span><span class="p">,</span> <span class="s2">"BottomCenter"</span> <span class="p">]</span>
 <span class="p">});</span>
 
 <span class="nx">firstInstance</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span>
-  <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;element1&quot;</span><span class="p">,</span> 
-  <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;element2&quot;</span><span class="p">,</span> 
-  <span class="nx">scope</span><span class="o">:</span><span class="s2">&quot;someScope&quot;</span> 
+  <span class="na">source</span><span class="p">:</span><span class="s2">"element1"</span><span class="p">,</span> 
+  <span class="na">target</span><span class="p">:</span><span class="s2">"element2"</span><span class="p">,</span> 
+  <span class="na">scope</span><span class="p">:</span><span class="s2">"someScope"</span> 
 <span class="p">});</span>
 </code></pre></div>
 <p><code>getInstance</code> optionally takes an object that provides the defaults:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">secondInstance</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">({</span>
-  <span class="nx">PaintStyle</span><span class="o">:</span><span class="p">{</span> 
-    <span class="nx">lineWidth</span><span class="o">:</span><span class="mi">6</span><span class="p">,</span> 
-    <span class="nx">strokeStyle</span><span class="o">:</span><span class="s2">&quot;#567567&quot;</span><span class="p">,</span> 
-    <span class="nx">outlineColor</span><span class="o">:</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> 
-    <span class="nx">outlineWidth</span><span class="o">:</span><span class="mi">1</span> 
+  <span class="na">PaintStyle</span><span class="p">:{</span> 
+    <span class="na">lineWidth</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> 
+    <span class="na">strokeStyle</span><span class="p">:</span><span class="s2">"#567567"</span><span class="p">,</span> 
+    <span class="na">outlineColor</span><span class="p">:</span><span class="s2">"black"</span><span class="p">,</span> 
+    <span class="na">outlineWidth</span><span class="p">:</span><span class="mi">1</span> 
   <span class="p">},</span>
-  <span class="nx">Connector</span><span class="o">:</span><span class="p">[</span> <span class="s2">&quot;Bezier&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">curviness</span><span class="o">:</span> <span class="mi">30</span> <span class="p">}</span> <span class="p">],</span>
-  <span class="nx">Endpoint</span><span class="o">:</span><span class="p">[</span> <span class="s2">&quot;Dot&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">radius</span><span class="o">:</span><span class="mi">5</span> <span class="p">}</span> <span class="p">],</span>
-  <span class="nx">EndpointStyle</span> <span class="o">:</span> <span class="p">{</span> <span class="nx">fillStyle</span><span class="o">:</span> <span class="s2">&quot;#567567&quot;</span>  <span class="p">},</span>
-  <span class="nx">Anchor</span> <span class="o">:</span> <span class="p">[</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span>
+  <span class="na">Connector</span><span class="p">:[</span> <span class="s2">"Bezier"</span><span class="p">,</span> <span class="p">{</span> <span class="na">curviness</span><span class="p">:</span> <span class="mi">30</span> <span class="p">}</span> <span class="p">],</span>
+  <span class="na">Endpoint</span><span class="p">:[</span> <span class="s2">"Dot"</span><span class="p">,</span> <span class="p">{</span> <span class="na">radius</span><span class="p">:</span><span class="mi">5</span> <span class="p">}</span> <span class="p">],</span>
+  <span class="na">EndpointStyle</span> <span class="p">:</span> <span class="p">{</span> <span class="na">fillStyle</span><span class="p">:</span> <span class="s2">"#567567"</span>  <span class="p">},</span>
+  <span class="na">Anchor</span> <span class="p">:</span> <span class="p">[</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span>
 <span class="p">});</span>
 
 <span class="nx">secondInstance</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> 
-  <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;element4&quot;</span><span class="p">,</span> 
-  <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;element3&quot;</span><span class="p">,</span> 
-  <span class="nx">scope</span><span class="o">:</span><span class="s2">&quot;someScope&quot;</span>   
+  <span class="na">source</span><span class="p">:</span><span class="s2">"element4"</span><span class="p">,</span> 
+  <span class="na">target</span><span class="p">:</span><span class="s2">"element3"</span><span class="p">,</span> 
+  <span class="na">scope</span><span class="p">:</span><span class="s2">"someScope"</span>   
 <span class="p">});</span>
 </code></pre></div>
 <p>It is recommended to use separate instances of jsPlumb wherever possible.</p>
@@ -352,7 +352,7 @@ course, it&#39;s a free-for-all - but it will be ignored.</p>
 
 <p><strong>Also Important</strong> If you happen to be using jsPlumb&#39;s <code>draggable</code> method to make other parts of your UI draggable (ie. not just things you&#39;re plumbing together), be careful not to call <code>draggable</code> on the element that is acting as the <code>Container</code> for the current instance, or you will see some odd situations occur when dragging.  It is suggested that the best thing to do if you wish to use jsPlumb to enable dragging on non-plumbed elements is to create a new instance:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">nonPlumbing</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">();</span>
-<span class="nx">nonPlumbing</span><span class="p">.</span><span class="nx">draggable</span><span class="p">(</span><span class="s2">&quot;some element&quot;</span><span class="p">);</span>
+<span class="nx">nonPlumbing</span><span class="p">.</span><span class="nx">draggable</span><span class="p">(</span><span class="s2">"some element"</span><span class="p">);</span>
 </code></pre></div>
 <h5>Some examples</h5>
 
@@ -360,29 +360,29 @@ course, it&#39;s a free-for-all - but it will be ignored.</p>
 <li>Set a Container to use as the default Container, using a jQuery selector, and then add an Endpoint.  The related UI 
 artefact will be a child of the document body:</li>
 </ul>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">setContainer</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">));</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">setContainer</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s2">"body"</span><span class="p">));</span>
 <span class="p">...</span>
 <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="nx">someDiv</span><span class="p">,</span> <span class="p">{</span> <span class="nx">endpoint</span> <span class="nx">options</span> <span class="p">});</span>
 </code></pre></div>
 <ul>
 <li>Set a container to use as the default container, using Plain Old DOM:</li>
 </ul>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">setContainer</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">));</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">setContainer</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">));</span>
 <span class="p">...</span>
 <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="nx">someDiv</span><span class="p">,</span> <span class="p">{</span> <span class="nx">endpoint</span> <span class="nx">options</span> <span class="p">});</span>
 </code></pre></div>
 <ul>
 <li>Set a container to use as the default container, using an element id, and then connect two elements.  The elements created in this example will be children of the element with id &quot;containerId&quot;:</li>
 </ul>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">setContainer</span><span class="p">(</span><span class="s2">&quot;containerId&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">setContainer</span><span class="p">(</span><span class="s2">"containerId"</span><span class="p">);</span>
 <span class="p">...</span>
-<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> <span class="nx">source</span><span class="o">:</span><span class="nx">someDiv</span><span class="p">,</span> <span class="nx">target</span><span class="o">:</span><span class="nx">someOtherDiv</span> <span class="p">});</span>
+<span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span> <span class="na">source</span><span class="p">:</span><span class="nx">someDiv</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span><span class="nx">someOtherDiv</span> <span class="p">});</span>
 </code></pre></div>
 <ul>
 <li>Get a new instance of jsPlumb and specify the container to use in the constructor params:</li>
 </ul>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">getInstance</span><span class="p">({</span>
-  <span class="nx">Container</span><span class="o">:</span><span class="s2">&quot;foo&quot;</span>
+  <span class="na">Container</span><span class="p">:</span><span class="s2">"foo"</span>
 <span class="p">});</span>
 <span class="p">...</span>
 <span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="nx">someDiv</span><span class="p">,</span> <span class="p">{</span> <span class="nx">endpoint</span> <span class="nx">options</span> <span class="p">});</span>
@@ -396,7 +396,7 @@ artefact will be a child of the document body:</li>
 <h3>Element Dragging</h3>
 
 <p>A common feature of interfaces using jsPlumb is that the elements are draggable.  You should use <code>jsPlumbInstance.draggable</code> to configure this:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myInstanceOfJsPlumb</span><span class="p">.</span><span class="nx">draggable</span><span class="p">(</span><span class="s2">&quot;elementId&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myInstanceOfJsPlumb</span><span class="p">.</span><span class="nx">draggable</span><span class="p">(</span><span class="s2">"elementId"</span><span class="p">);</span>
 </code></pre></div>
 <p>...because if you don&#39;t, jsPlumb won&#39;t know that an element has been dragged, and it won&#39;t repaint the element.</p>
 
@@ -435,7 +435,7 @@ artefact will be a child of the document body:</li>
 <span class="p">});</span>
 </code></pre></div>
 <p>Here, we&#39;ve assumed that <code>connections</code> is an array of objects that would be suitable to pass to the <code>connect</code> method, for example:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;someElement&quot;</span><span class="p">,</span> <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;someOtherElement&quot;</span> <span class="p">}</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nl">source</span><span class="p">:</span><span class="s2">"someElement"</span><span class="p">,</span> <span class="nx">target</span><span class="err">:</span><span class="s2">"someOtherElement"</span> <span class="p">}</span>
 </code></pre></div>
 <p>By default, this will run a repaint at the end. But you can suppress that, should you want to:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">batch</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
