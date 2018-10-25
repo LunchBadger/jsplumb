@@ -148,7 +148,7 @@ this case, nodes are placed above connectors.</li>
                     height:60px;
                     z-index:10;
                  }</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">             .jsplumb-connector { 
+<div class="highlight"><pre><code class="language-" data-lang="">             .jsplumb-connector { 
                  z-index:9;
              }
 
@@ -164,23 +164,23 @@ this case, nodes are placed above connectors.</li>
         &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;div id=&quot;one&quot;&gt;one&lt;/div&gt;
-        &lt;div id=&quot;two&quot;&gt;two&lt;/div&gt;
+        &lt;div id="one"&gt;one&lt;/div&gt;
+        &lt;div id="two"&gt;two&lt;/div&gt;
         Drag a connection from &lt;strong&gt;one&lt;/strong&gt; to &lt;strong&gt;two&lt;/strong&gt;
-        &lt;div id=&quot;debug&quot;&gt;&lt;/div&gt;
+        &lt;div id="debug"&gt;&lt;/div&gt;
 
-        &lt;script type=&#39;text/javascript&#39; src=&#39;http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js&#39;&gt;&lt;/script&gt;
-        &lt;script type=&#39;text/javascript&#39; src=&#39;http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js&#39;&gt;&lt;/script&gt;
-        &lt;script type=&quot;text/javascript&quot; src=&quot;http://cdnjs.cloudflare.com/ajax/libs/jsPlumb/1.4.1/jquery.jsPlumb-1.4.1-all.js&quot;&gt;&lt;/script&gt;
+        &lt;script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js'&gt;&lt;/script&gt;
+        &lt;script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js'&gt;&lt;/script&gt;
+        &lt;script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jsPlumb/1.4.1/jquery.jsPlumb-1.4.1-all.js"&gt;&lt;/script&gt;
 
-        &lt;script type=&quot;text/javascript&quot;&gt;
+        &lt;script type="text/javascript"&gt;
             jsPlumb.ready(function() {
-                jsPlumb.addEndpoint(&quot;one&quot;, { isSource:true });
-                jsPlumb.addEndpoint(&quot;two&quot;, { isTarget:true });
+                jsPlumb.addEndpoint("one", { isSource:true });
+                jsPlumb.addEndpoint("two", { isTarget:true });
 
-                jsPlumb.bind(&quot;connection&quot;, function(info) {
-                    console.log(&quot;new connection:&quot;, info);
-                    $(&quot;#debug&quot;).html(&quot;hello.&quot;);
+                jsPlumb.bind("connection", function(info) {
+                    console.log("new connection:", info);
+                    $("#debug").html("hello.");
                 });
             });
         &lt;/script&gt;

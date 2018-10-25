@@ -164,9 +164,9 @@
 </ul>
 
 <p><code>beforeDrag</code> operates slightly differently to the other interceptors: it is still the case that returning false from your interceptor function will abort the current activity - in this case cancelling the drag - but  you can also return an object from your interceptor, and this object will be passed in as the <code>data</code> parameter in the constructor of the new Connection:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumbInstance</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s2">&quot;beforeDrag&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumbInstance</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s2">"beforeDrag"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">{</span>
-   <span class="nx">foo</span><span class="o">:</span><span class="s2">&quot;bar&quot;</span>
+   <span class="na">foo</span><span class="p">:</span><span class="s2">"bar"</span>
   <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div>

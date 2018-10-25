@@ -154,10 +154,10 @@ exposed on the jsPlumb object and can be overridden if you need to do so - see t
 <p>In a simple UI, you can set appropriate z-index values for these classes. The jsPlumb demo pages, for instance, 
 typically use a class of <code>.window</code> for the nodes in each demo page, and the z-index of the UI is controlled with CSS 
 rules like this:</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.window</span> <span class="p">{</span> <span class="k">z-index</span><span class="o">:</span><span class="m">20</span><span class="p">;</span> <span class="p">}</span>
-<span class="nc">.jsplumb-connector</span> <span class="p">{</span> <span class="k">z-index</span><span class="o">:</span><span class="m">4</span><span class="p">;</span> <span class="p">}</span>
-<span class="nc">.jsplumb-endpoint</span> <span class="p">{</span> <span class="k">z-index</span><span class="o">:</span><span class="m">5</span><span class="p">;</span> <span class="p">}</span>
-<span class="nc">.jsplumb-overlay</span> <span class="p">{</span> <span class="k">z-index</span><span class="o">:</span><span class="m">6</span><span class="p">;</span> <span class="p">}</span>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.window</span> <span class="p">{</span> <span class="nl">z-index</span><span class="p">:</span><span class="m">20</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.jsplumb-connector</span> <span class="p">{</span> <span class="nl">z-index</span><span class="p">:</span><span class="m">4</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.jsplumb-endpoint</span> <span class="p">{</span> <span class="nl">z-index</span><span class="p">:</span><span class="m">5</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.jsplumb-overlay</span> <span class="p">{</span> <span class="nl">z-index</span><span class="p">:</span><span class="m">6</span><span class="p">;</span> <span class="p">}</span>
 </code></pre></div>
 <h3>Interactive CSS Classes</h3>
 
@@ -181,7 +181,7 @@ rules like this:</p>
 <p><strong>Note</strong> the last two classes work in conjunction with the <code>checkDropAllowed</code> interceptor that you can register on 
 jsPlumb. For more information about interceptors, see <a href="interceptors">here</a>, but in a nutshell you just provide a 
 function that takes the two Endpoints and a Connection as argument, and returns whether not a drop would be allowed:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s2">&quot;checkDropAllowed&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s2">"checkDropAllowed"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="c1">// Here you have access to:</span>
   <span class="c1">// params.sourceEndpoint</span>
@@ -199,12 +199,12 @@ when dragging:</p>
 </code></pre></div>
 <p>A suitable value for this (from the jsPlumb demos) is:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.jsplumb-drag-select</span> <span class="p">{</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">touch</span><span class="o">-</span><span class="n">callout</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">khtml</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-  <span class="n">user</span><span class="o">-</span><span class="n">select</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>    
+  <span class="nl">-webkit-touch-callout</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">-webkit-user-select</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">-khtml-user-select</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">-moz-user-select</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="nl">-ms-user-select</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="py">user-select</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>    
 <span class="p">}</span>
 </code></pre></div>
 <h3>Custom CSS Classes</h3>
@@ -236,20 +236,20 @@ include multiple classes.  jsPlumb won&#39;t even know.</p>
 depending on whether or not you have specified an <code>outlineStyle</code>.  To target the path element for some connection, you 
 need a rule like this:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">svg</span> <span class="nt">path</span> <span class="p">{</span>
-  <span class="n">stroke</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Hooking this up to the custom class mechanism, you might do something like this:    </p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span>
-  <span class="nx">source</span><span class="o">:</span><span class="s2">&quot;someElement&quot;</span><span class="p">,</span>
-  <span class="nx">target</span><span class="o">:</span><span class="s2">&quot;someOtherElement&quot;</span><span class="p">,</span>
-  <span class="nx">cssClass</span><span class="o">:</span><span class="s2">&quot;redLine&quot;</span>
+  <span class="na">source</span><span class="p">:</span><span class="s2">"someElement"</span><span class="p">,</span>
+  <span class="na">target</span><span class="p">:</span><span class="s2">"someOtherElement"</span><span class="p">,</span>
+  <span class="na">cssClass</span><span class="p">:</span><span class="s2">"redLine"</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>CSS:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">svg</span><span class="nc">.redLine</span> <span class="nt">path</span> <span class="p">{</span>
-  <span class="n">stroke</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span>
-  <span class="n">stroke</span><span class="o">-</span><span class="k">width</span><span class="o">:</span><span class="m">3</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+  <span class="py">stroke-width</span><span class="p">:</span><span class="m">3</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>You might be thinking to yourself, why have the <code>svg</code> and <code>path</code> elements in this?  In fact they are perhaps not 
@@ -268,21 +268,21 @@ is some shape, the tag name of which depends on the type of Endpoint:</p>
 
 <p>So you can choose, when writing CSS rules for these, whether or not you specify the shape exactly, or just leave it up 
 to a wildcard:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">&quot;someElement&quot;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">cssClass</span><span class="o">:</span><span class="s2">&quot;aRedEndpoint&quot;</span><span class="p">,</span>
-  <span class="nx">endpoint</span><span class="o">:</span><span class="s2">&quot;Dot&quot;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jsPlumb</span><span class="p">.</span><span class="nx">addEndpoint</span><span class="p">(</span><span class="s2">"someElement"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">cssClass</span><span class="p">:</span><span class="s2">"aRedEndpoint"</span><span class="p">,</span>
+  <span class="na">endpoint</span><span class="p">:</span><span class="s2">"Dot"</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>CSS:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.aRedEndpoint</span> <span class="nt">svg</span> <span class="nt">circle</span> <span class="p">{</span>
-  <span class="n">fill</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span>
-  <span class="n">stroke</span><span class="o">:</span><span class="nb">yellow</span><span class="p">;</span>
+  <span class="py">fill</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span><span class="no">yellow</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>...or:</p>
 <div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.aRedEndpoint</span> <span class="nt">svg</span> <span class="o">*</span> <span class="p">{</span>
-  <span class="n">fill</span><span class="o">:</span><span class="nb">red</span><span class="p">;</span>
-  <span class="n">stroke</span><span class="o">:</span><span class="nb">yellow</span><span class="p">;</span>
+  <span class="py">fill</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+  <span class="py">stroke</span><span class="p">:</span><span class="no">yellow</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>For a full discussion of the properties you can configure on an SVG element via CSS, we refer you to 

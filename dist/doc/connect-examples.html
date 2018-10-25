@@ -183,27 +183,27 @@ jsPlumb.connect({
 });
 </pre></p></li>
 <li><p>Connect window3 to window4 with a 10px wide blue-ish half transparent Bezier. Put Endpoints underneath the element they attach to.  The Endpoints have a radial gradient. Both ways of specifying gradient positioning are shown here.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">var w34Stroke = &#39;rgba(50, 50, 200, 1)&#39;;
-var w34HlStroke = &#39;rgba(180, 180, 200, 1)&#39;;
+<div class="highlight"><pre><code class="language-" data-lang="">var w34Stroke = 'rgba(50, 50, 200, 1)';
+var w34HlStroke = 'rgba(180, 180, 200, 1)';
 jsPlumb.connect( {
-  source:&#39;window3&#39;,
-  target:&#39;window4&#39;,
+  source:'window3',
+  target:'window4',
   paintStyle:{lineWidth:10, strokeStyle:w34Stroke},
-  anchors:[&quot;RightMiddle&quot;, &quot;LeftMiddle&quot;],
+  anchors:["RightMiddle", "LeftMiddle"],
   endpointStyle:{ gradient : {stops:[[ 0, w34Stroke ], [ 1, w34HlStroke ]], offset:17.5, innerRadius:15 }, radius:35},
-  //endpointStyle:{ gradient : {stops:[[0, w34Stroke], [1, w34HlStroke]], offset:&#39;78%&#39;, innerRadius:&#39;73%&#39;}, radius:35 }
+  //endpointStyle:{ gradient : {stops:[[0, w34Stroke], [1, w34HlStroke]], offset:'78%', innerRadius:'73%'}, radius:35 }
 });
 </code></pre></div></li>
 <li><p>Connect window2 to window3 with an 8px red Bezier and default rectangular endpoints.  See also how the first Anchor is specified here - this is how you create Anchors in locations jsPlumb does not offer shortcuts for.  The Endpoints in this example have linear gradients applied.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">var w23Stroke = &#39;rgb(189,11,11)&#39;;
+<div class="highlight"><pre><code class="language-" data-lang="">var w23Stroke = 'rgb(189,11,11)';
 jsPlumb.connect({
-    source:&#39;window2&#39;,
-    target:&#39;window3&#39;,
+    source:'window2',
+    target:'window3',
     paintStyle:{lineWidth:8,strokeStyle:w23Stroke},
-    anchors:[[0.3,1,0,1], &quot;Top&quot;],
-    endpoint:&quot;Rectangle&quot;,
-    endpointStyles:[{ gradient : {stops:[[0, w23Stroke], [1, &#39;#558822&#39;]] }},
-            { gradient : {stops:[[0, w23Stroke], [1, &#39;#882255&#39;]] }}]
+    anchors:[[0.3,1,0,1], "Top"],
+    endpoint:"Rectangle",
+    endpointStyles:[{ gradient : {stops:[[0, w23Stroke], [1, '#558822']] }},
+            { gradient : {stops:[[0, w23Stroke], [1, '#882255']] }}]
 });
 </code></pre></div></li>
 <li><p>Connect window5 to window6 from center to center, 5px wide line that is green and half transparent. the Endpoints are 125px in radius and spill out from underneath their elements.
