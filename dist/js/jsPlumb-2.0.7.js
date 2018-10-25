@@ -1688,6 +1688,10 @@
             this.params.setPosition(dragEl, cPos);
             for (var i = 0; i < matchingDroppables.length; i++) {
                 var r2 = { x:matchingDroppables[i].position[0], y:matchingDroppables[i].position[1], w:matchingDroppables[i].size[0], h:matchingDroppables[i].size[1]};
+                var quadrant = matchingDroppables[i].el.closest('.quadrant .quadrant__body');
+                if (quadrant && quadrant.scrollTop) {
+                  r2.y -= quadrant.scrollTop - matchingDroppables[i].initialScrollTop;
+                }
                 if (this.params.intersects(rect, r2) && (_multipleDrop || focusDropElement == null || focusDropElement == matchingDroppables[i].el) && matchingDroppables[i].canDrop(this)) {
                     if (!focusDropElement) focusDropElement = matchingDroppables[i].el;
                     intersectingDroppables.push(matchingDroppables[i]);
@@ -1835,6 +1839,8 @@
                         for (var j = 0; j < _dd.length; j++) {
                             if (_dd[j].canDrop(drag) &&  !_m[_dd[j].uuid] && (_dd[j].allowLoopback || _dd[j].el !== drag.el)) {
                                 _m[_dd[j].uuid] = true;
+                                var quadrant = _dd[j].el.closest('.quadrant .quadrant__body') || {};
+                                _dd[j].initialScrollTop = quadrant.scrollTop || 0;
                                 dd.push(_dd[j]);
                             }
                         }
